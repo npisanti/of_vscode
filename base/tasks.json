@@ -1,0 +1,81 @@
+{
+    "version": "2.0.0",
+    "shell":{
+        "task": true
+    },
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "OPENFRAMEWORKS BUILD RELEASE",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "command": "make -j4 -s 2>&1 && make RunRelease",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                  "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                  "file": 1,
+                  "line": 2,
+                  "column": 3,
+                  "severity": 4,
+                  "message": 5
+                }
+              }
+        },
+        {
+            "type": "shell",
+            "label": "build Release",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "command": "make",
+            "args": [
+                "Release"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "clean Debug",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "command": "make",
+            "args": [
+                "CleanDebug"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "clean Release",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "command": "make",
+            "args": [
+                "CleanRelease"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "clean All",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "command": "make",
+            "args": [
+                "clean"
+            ]
+        }
+    ]
+}
