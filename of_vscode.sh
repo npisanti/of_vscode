@@ -26,7 +26,7 @@ if [ -z "$destpath" ]; then
 fi
 
 appname=$(basename $destpath)
-echo "generating visual studio oF project named $appname for path $destpath"
+echo "generating visual studio oF project named $appname"
 
 echo "generating .vscode/c_cpp_properties.json"
 
@@ -57,7 +57,7 @@ if [ -f $inputlist ]; then
 
                         done < $filename
                 else
-                        echo -e "    file $addon.paths not present, attempting automatic paths finding"
+                        echo -e "    file $addon.paths not present, starting automatic paths finding"
                         addonpath="$rootpath/addons/$addon"
                         echo -e "        presuming path $addonpath"
                         if [ -d $addonpath/src ]; then

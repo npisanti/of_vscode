@@ -23,7 +23,7 @@ scriptpath="/home/$USER/apps/of_vscode"
 rootpath="/home/$USER/oF"
 ```
 
-you can also choose your compiler, for examle i use `clang`
+you can also choose your compiler, for example I use `clang`
 ```sh
 #choose your compiler
 #compiler="gcc-x64"
@@ -40,8 +40,8 @@ or
    of_vscode.sh
 ```
 
-# addons paths
+# manual addons include paths
 To add the necessary includes to the project settings the script parses some `.paths` files that you can find in the `paths` directory. If there is no `.paths` file it will try to add all the paths in the `src` and `libs` folders of the addon, if present. If an addon include headers outside its folder probably is a better idea to write a `.paths` file with a list of paths to include for that specific addon. You can use the OFDIRECTORY word as a wildcard for the main oF path, see the included `.paths` for examples.
 
 # credits 
-This project was ispired by [Roberto Fazio VSCode/oF example](https://github.com/robertofazio/openFrameworks_VisualStudioCode_Example), that motivated me to try to switch from Geany to VSCode.
+This project was ispired by [Roberto Fazio VS Code / oF example](https://github.com/robertofazio/openFrameworks_VisualStudioCode_Example), that motivated me to try to switch from Geany to VS Code.
