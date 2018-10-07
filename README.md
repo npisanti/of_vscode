@@ -42,4 +42,4 @@ If you want to use addons in your app, you HAVE TO WRITE THE `addons.make` FILE 
 To add the necessary includes to the project settings the script parses some `.paths` files that you can find in the `paths` directory. For each addon you want to use there should be a `.paths` file with a list of paths to include for that addon. You can use the OFDIRECTORY word as a wildcard for the main oF path, see the included `.paths` for examples.
 
 # credits 
-This project was ispired by (Roberto Fazio VSCode/oF example)[https://github.com/robertofazio/openFrameworks_VisualStudioCode_Example], that motivated me to try to switch from Geany to VSCode.
+This project was ispired by [Roberto Fazio VSCode/oF example](https://github.com/robertofazio/openFrameworks_VisualStudioCode_Example), that motivated me to try to switch from Geany to VSCode.

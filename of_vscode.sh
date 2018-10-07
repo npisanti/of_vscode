@@ -40,7 +40,7 @@ cat $scriptpath/base/c_cpp_properties_pt1.json >> $destpath/.vscode/c_cpp_proper
 echo "---adding oF includes"
 while read -r path
 do 
-        echo "\t\t\t\t\"$path\"," >> $destpath/.vscode/c_cpp_properties.json
+        echo -e "\t\t\t\t\"$path\"," >> $destpath/.vscode/c_cpp_properties.json
 done < $scriptpath/paths/$distrofile
 
 inputlist="$destpath/addons.make"
@@ -53,7 +53,7 @@ if [ -f $inputlist ]; then
                         while read -r path 
                         do
 
-                                echo "\t\t\t\t\"$path\"," >> $destpath/.vscode/c_cpp_properties.json
+                                echo -e "\t\t\t\t\"$path\"," >> $destpath/.vscode/c_cpp_properties.json
 
                         done < $filename
                 else
