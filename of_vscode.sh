@@ -37,7 +37,7 @@ rm -rf $destpath/*.code-workspace
 
 cat $scriptpath/base/c_cpp_properties_pt1.json >> $destpath/.vscode/c_cpp_properties.json
 
-echo "---adding oF includes"
+echo -e "    adding oF includes"
 while read -r path
 do 
         echo -e "\t\t\t\t\"$path\"," >> $destpath/.vscode/c_cpp_properties.json
@@ -49,7 +49,7 @@ if [ -f $inputlist ]; then
         do
                 filename=$scriptpath/paths/$addon.paths
                 if [ -f $filename ]; then
-                        echo "---adding includes for $addon"
+                        echo -e "    adding includes for $addon"
                         while read -r path 
                         do
 
@@ -57,7 +57,22 @@ if [ -f $inputlist ]; then
 
                         done < $filename
                 else
-                        echo "file $addon.paths not present, it's time to write it"
+                        echo -e "    file $addon.paths not present, attempting automatic paths finding"
+                        addonpath="$rootpath/addons/$addon"
+                        echo -e "        presuming path $addonpath"
+                        if [ -d $addonpath/src ]; then
+                                echo -e "        adding all the paths in $addonpath/src"
+                                for i in $(find $addonpath/src -type d); do
+                                        echo -e "\t\t\t\t\"$i\"," >> $destpath/.vscode/c_cpp_properties.json
+                                done
+                        fi
+                        if [ -d $addonpath/libs ]; then
+                                echo -e "        adding all the paths in $addonpath/libs"
+                                for i in $(find $addonpath/libs -type d); do
+                                        echo -e "\t\t\t\t\"$i\"," >> $destpath/.vscode/c_cpp_properties.json
+                                done
+                        fi
+
                 fi
         done < $inputlist
 fi

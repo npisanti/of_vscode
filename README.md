@@ -36,10 +36,9 @@ or
 ```
 
 If you puth the script in your enviroment path and you use it without the path it just generates the project in the current folder. 
-If you want to use addons in your app, you HAVE TO WRITE THE `addons.make` FILE BEFORE LAUNCHING THE SCRIPT! also read the next section about addon include paths.
 
 # addons paths
-To add the necessary includes to the project settings the script parses some `.paths` files that you can find in the `paths` directory. For each addon you want to use there should be a `.paths` file with a list of paths to include for that addon. You can use the OFDIRECTORY word as a wildcard for the main oF path, see the included `.paths` for examples.
+To add the necessary includes to the project settings the script parses some `.paths` files that you can find in the `paths` directory. If there is no `.paths` file it will try to add all the paths in the `src` and `libs` folders of the addon, if present. If an addon include headers outside its folder probably is a better idea to write a `.paths` file with a list of paths to include for that specific addon. You can use the OFDIRECTORY word as a wildcard for the main oF path, see the included `.paths` for examples.
 
 # credits 
 This project was ispired by [Roberto Fazio VSCode/oF example](https://github.com/robertofazio/openFrameworks_VisualStudioCode_Example), that motivated me to try to switch from Geany to VSCode.
