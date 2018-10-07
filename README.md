@@ -5,8 +5,8 @@ bash script for generating VSCode openFrameworks project with enabled intellisen
 - openFrameworks 0.10.0 gcc6
 - Microsoft Visual Studio Code IDE 1.27.2
 
-# vs code setup
-You have to install the [.deb package](https://code.visualstudio.com/docs/?dv=linux64_deb) for VSCode, then in the VSCode extesion marketplace install the language support extension for C/C++ and the C++ Intellisense extension (by [austin](https://github.com/austin-----/code-gnu-global)). I also recommend disabling Telemetry options in VSCode preferences, to avoid sending data to Microsoft (thanks for the software but still i would prefer not to). 
+# install visual studio code
+You have to install the [.deb package](https://code.visualstudio.com/docs/?dv=linux64_deb) for VSCode, then by the editor's extesion marketplace you have to install the language support extension for C/C++ and the C++ Intellisense extension (by [austin](https://github.com/austin-----/code-gnu-global)). I also recommend disabling Telemetry options in VSCode preferences, to avoid sending data to Microsoft ( thanks for the software but still i would prefer not to ). 
 
 # of_code.sh installation
 (will ask for sudo password)
