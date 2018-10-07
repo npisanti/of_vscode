@@ -94,7 +94,10 @@ cp  $scriptpath/base/tasks.json $destpath/.vscode/tasks.json
 
 echo "copying other files"
 cp $scriptpath/base/appname.code-workspace $destpath/$appname.code-workspace
-cp $scriptpath/base/Makefile $destpath/Makefile
+
+if [ ! -f $destpath/Makefile ]; then
+        cp $scriptpath/base/Makefile $destpath/Makefile
+fi
 
 
 exit

@@ -6,11 +6,15 @@ bash script for generating VSCode openFrameworks project with enabled intellisen
 - Microsoft Visual Studio Code IDE 1.27.2
 
 # installation
+(will ask for sudo password)
 ```console
     git clone https://github.com/npisanti/of_vscode.git
-    chmod +x of_vscode/of_vscode.sh
+    cd of_vscode
+    sh install.sh
 ```
-then you have to edit the `of_vscode/of_vscode.sh` file and set some absolute paths:
+
+# configuration (needed)
+You have to edit the `of_vscode/of_vscode.sh` file and set some absolute paths:
 ```sh
 # put the absolute path of the script here
 scriptpath="/home/$USER/apps/of_vscode"
@@ -28,14 +32,13 @@ compiler="clang-x64"
 
 # usage
 ```console
-   ./of_vscode.sh ~/path/to/your/app
+   of_vscode.sh ~/path/to/your/app
 ```
 or
 ```console
-   sh of_vscode.sh ~/path/to/your/app
+   cd ~/path/to/your/app
+   of_vscode.sh
 ```
-
-If you puth the script in your enviroment path and you use it without the path it just generates the project in the current folder. 
 
 # addons paths
 To add the necessary includes to the project settings the script parses some `.paths` files that you can find in the `paths` directory. If there is no `.paths` file it will try to add all the paths in the `src` and `libs` folders of the addon, if present. If an addon include headers outside its folder probably is a better idea to write a `.paths` file with a list of paths to include for that specific addon. You can use the OFDIRECTORY word as a wildcard for the main oF path, see the included `.paths` for examples.
