@@ -8,7 +8,15 @@ bash script for generating VSCode openFrameworks project with enabled intellisen
 # install visual studio code
 You have to install the [.deb package](https://code.visualstudio.com/docs/?dv=linux64_deb) for VSCode, then by the editor's extesion marketplace you have to install the language support extension for C/C++ and the C++ Intellisense extension (by [austin](https://github.com/austin-----/code-gnu-global)). I also recommend disabling Telemetry options in VSCode preferences, to avoid sending data to Microsoft ( thanks for the software but still i would prefer not to ). 
 
-You can use VSCode with the `code` command.
+You can use VSCode with the `code` command. For correctly opening an oF project you have to open the folder of the project (not the `src` folder, the app folder), so you can do
+```console
+   code ~/path/to/your/app
+```
+or
+```console
+   cd ~/path/to/your/app
+   code .
+```
 
 # of_code.sh installation
 (will ask for sudo password)
@@ -17,7 +25,7 @@ You can use VSCode with the `code` command.
     cd of_vscode
     sh install.sh /absolute/path/to/oF/directory compilername
 ```
-If you don't give the absolute path to your oF directory, it defaults to `/home/$USER/openFrameworks`. You cannot specify `compilername` without giving the oF path first, if you don't give anything it default to `gcc-x64`. Another choice could be `clang-x64` if you use it. If you move the folder of of_vscode.sh after installing it you have to run the installation again.
+If you don't give the absolute path to your oF directory, it defaults to `/home/$USER/openFrameworks`. You cannot specify `compilername` without giving the oF path first, if you don't give anything it defaults to `gcc-x64`. Another choice could be `clang-x64` if you use it. If you move the folder of `of_vscode.sh` after installing it you have to run the installation again.
 
 
 # usage
