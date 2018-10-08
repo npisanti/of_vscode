@@ -15,25 +15,10 @@ You can use VSCode with the `code` command.
 ```console
     git clone https://github.com/npisanti/of_vscode.git
     cd of_vscode
-    sh install.sh
+    sh install.sh /absolute/path/to/oF/directory compilername
 ```
+If you don't give the absolute path to your oF directory, it defaults to `/home/$USER/openFrameworks`. You cannot specify `compilername` without giving the oF path first, if you don't give anything it default to `gcc-x64`. Another choice could be `clang-x64` if you use it. If you move the folder of of_vscode.sh after installing it you have to run the installation again.
 
-# configuration (needed)
-You have to edit the `of_vscode/of_vscode.sh` file and set some absolute paths:
-```sh
-# put the absolute path of the script here
-scriptpath="/home/$USER/apps/of_vscode"
-
-# put the absolute path of openFrameworks here
-rootpath="/home/$USER/oF"
-```
-
-you can also choose your compiler, for example I use `clang`
-```sh
-#choose your compiler
-#compiler="gcc-x64"
-compiler="clang-x64"
-```
 
 # usage
 ```console
@@ -47,7 +32,7 @@ or
 
 # custom addon include paths
 The script will try to automatically adds all the paths in the `src` and `libs` folders of the addon, if present.
-If an addon include headers outside its folder probably is a better idea to write a `.paths` file with a list of paths to include for that specific addon. The included `.paths` files will give you some clear examples on how to do it.
+If an addon include headers outside its folder probably is a better idea to write a `.paths` file with a list of paths to include for that specific addon. This file has to be put in the `paths` folder in the repostitory. The included `.paths` files will give you some clear examples on how to do it. Also pull request for `.paths` files are really appreciated! 
 
 # credits 
 This project was ispired by [Roberto Fazio VS Code / oF example](https://github.com/robertofazio/openFrameworks_VisualStudioCode_Example), that motivated me to try to switch from Geany to VS Code.

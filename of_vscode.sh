@@ -3,17 +3,17 @@
 # ---------------- SETTINGS ------------------------------------
 
 # put the absolute path of the script here
-scriptpath="/home/$USER/apps/of_vscode"
+scriptpath="CONFIGSCRIPTPATH"
 
 # put the absolute path of openFrameworks here
-rootpath="/home/$USER/oF"
+rootpath="CONFIGOFDIRECTORY"
 
 # choose the name of your distro includes for oF
 distrofile="of_debian.paths"
 
 #choose your compiler
-#compiler="gcc-x64"
-compiler="clang-x64"
+compiler="CONFIGCOMPILER"
+#compiler="clang-x64"
 
 
 # ---------------- SCRIPT -------------------------------------
