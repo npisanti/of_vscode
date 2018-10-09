@@ -1,2 +1,3 @@
 OFDIRECTORY/addons/ofxOpenCv/libs/opencv/include
 OFDIRECTORY/addons/ofxOpenCv/src
+/usr/include/opencv
