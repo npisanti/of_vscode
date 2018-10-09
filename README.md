@@ -21,6 +21,7 @@ or
    cd ~/path/to/your/app
    code .
 ```
+to compile and run a project from VSCode, press `Ctrl+Shift+B`.
 
 # of_code.sh installation
 (will ask for sudo password)
