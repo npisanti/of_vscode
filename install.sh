@@ -5,23 +5,24 @@ scriptfile=$(pwd)/of_vscode.sh
 
 echo "installing of_vscode.sh"
 
-cp of_vscode.sh toedit.sh 
+cp of_vscode.sh toedit.sh
 sed -i -e "s|CONFIGSCRIPTPATH|$scriptpath|g" toedit.sh
 
 ofpath=${1%/}
-if [ -z "$ofpath" ]; then 
-        echo "no oF directory given, defaulting to ~/openFrameworks for master release"
-        ofpath="/home/$USER/openFrameworks"
+if [ -z "$ofpath" ]; then
+        echo "no oF directory given, defaulting to a path relative to the app folder"
+        ofpath='${workspaceRoot}/../../..'
 else
     echo "oF directory set to $ofpath"
-fi 
+fi
 
 sed -i -e "s|CONFIGOFDIRECTORY|$ofpath|g" toedit.sh
 
 compiler=$2
-if [ -z "$compiler" ]; then 
-    echo "compiler defaults to gcc-x64"
-    sed -i -e "s|CONFIGCOMPILER|gcc-x64|g" toedit.sh
+if [ -z "$compiler" ]; then
+    echo "compiler set to vs code default"
+    # escape sequence $ two times!
+    sed -i -e 's|CONFIGCOMPILER|${default}|g' toedit.sh
 else
     echo "compiler set to $compiler"
     sed -i -e "s|CONFIGCOMPILER|$compiler|g" toedit.sh

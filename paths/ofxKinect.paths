@@ -1,3 +1,4 @@
 OFDIRECTORY/addons/ofxKinect/src
 OFDIRECTORY/addons/ofxKinect/src/extra
 OFDIRECTORY/addons/ofxKinect/libs/libfreenect/include
+/usr/include/libusb-1.0

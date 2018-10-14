@@ -6,13 +6,13 @@
 scriptpath="CONFIGSCRIPTPATH"
 
 # put the absolute path of openFrameworks here
-rootpath="CONFIGOFDIRECTORY"
+rootpath='CONFIGOFDIRECTORY'
 
 # choose the name of your distro includes for oF
 distrofile="of_debian.paths"
 
 #choose your compiler
-compiler="CONFIGCOMPILER"
+compiler='CONFIGCOMPILER'
 #compiler="clang-x64"
 
 
@@ -20,7 +20,7 @@ compiler="CONFIGCOMPILER"
 
 destpath=${1%/}
 
-if [ -z "$destpath" ]; then 
+if [ -z "$destpath" ]; then
         echo "creating project in current path"
         destpath=$(pwd)
 fi
@@ -39,7 +39,7 @@ cat $scriptpath/base/c_cpp_properties_pt1.json >> $destpath/.vscode/c_cpp_proper
 
 echo -e "    adding oF includes"
 while read -r path
-do 
+do
         echo -e "\t\t\t\t\"$path\"," >> $destpath/.vscode/c_cpp_properties.json
 done < $scriptpath/paths/$distrofile
 
@@ -50,7 +50,7 @@ if [ -f $inputlist ]; then
                 filename=$scriptpath/paths/$addon.paths
                 if [ -f $filename ]; then
                         echo -e "    adding includes for $addon"
-                        while read -r path 
+                        while read -r path
                         do
 
                                 echo -e "\t\t\t\t\"$path\"," >> $destpath/.vscode/c_cpp_properties.json
