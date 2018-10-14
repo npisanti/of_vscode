@@ -44,6 +44,8 @@ do
 done < $scriptpath/paths/$distrofile
 
 inputlist="$destpath/addons.make"
+wsroot='${workspaceRoot}/'
+
 if [ -f $inputlist ]; then
         while read -r addon
         do
@@ -58,18 +60,25 @@ if [ -f $inputlist ]; then
                         done < $filename
                 else
                         echo -e "    file $addon.paths not present, starting automatic paths finding"
-                        addonpath="$rootpath/addons/$addon"
-                        echo -e "        presuming path $addonpath"
-                        if [ -d $addonpath/src ]; then
-                                echo -e "        adding all the paths in $addonpath/src"
-                                for i in $(find $addonpath/src -type d); do
-                                        echo -e "\t\t\t\t\"$i\"," >> $destpath/.vscode/c_cpp_properties.json
+                        presumedpath="$rootpath/addons/$addon"
+                        searchpath=${presumedpath#"$wsroot"}
+
+                        prefix="$wsroot"
+                        if [[ "$presumedpath" == "$searchpath" ]]; then
+                            prefix=""
+                        fi
+
+                        echo -e "        presuming path $searchpath"
+                        if [ -d $searchpath/src ]; then
+                                echo -e "        adding all the paths in $searchpath/src"
+                                for i in $(find $searchpath/src -type d); do
+                                        echo -e "\t\t\t\t\"$prefix$i\"," >> $destpath/.vscode/c_cpp_properties.json
                                 done
                         fi
-                        if [ -d $addonpath/libs ]; then
-                                echo -e "        adding all the paths in $addonpath/libs"
-                                for i in $(find $addonpath/libs -type d); do
-                                        echo -e "\t\t\t\t\"$i\"," >> $destpath/.vscode/c_cpp_properties.json
+                        if [ -d $searchpath/libs ]; then
+                                echo -e "        adding all the paths in $searchpath/libs"
+                                for i in $(find $searchpath/libs -type d); do
+                                        echo -e "\t\t\t\t\"$prefix$i\"," >> $destpath/.vscode/c_cpp_properties.json
                                 done
                         fi
 

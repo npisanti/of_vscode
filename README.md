@@ -12,14 +12,9 @@ For working with oF and VSCode:
 
 In the preference I recommend enabling `Files: Insert Final Newline' (as all the text/code files in linux should be terminated by a newline) and disabling Telemetry options to avoid sending data to Microsoft ( thanks for the software but still i would prefer not to ).
 
-You can use VSCode with the `code` command. For correctly opening an oF project you have to open the folder of the project (not the `src` folder, the app folder), so you can do
+You can use VSCode with the `code` command. For correctly opening an oF project you have to open the workspace file, so you can do
 ```console
-   code ~/path/to/your/app
-```
-or
-```console
-   cd ~/path/to/your/app
-   code .
+   code ~/path/to/your/app.code-workspace
 ```
 to compile and run a project from VSCode, press `Ctrl+Shift+B`.
 
