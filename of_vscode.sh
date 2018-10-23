@@ -90,18 +90,16 @@ fi
 cat $scriptpath/base/c_cpp_properties_pt2.json >> $destpath/.vscode/c_cpp_properties.json
 
 
+echo "parsing workspace folders..."
 
 cat $scriptpath/base/code-workspace.pt1 >> $destpath/$appname.code-workspace
 
 if [ -f $inputlist ]; then
         while read -r addon
         do
-
-            echo -e "    adding $addon to workspace"
-
             addonworkspace="$wsroot../../../../addons/$addon"
 
-            echo "search path is $addonworkspace"
+            echo -e "    adding $addon to workspace"
 
             echo -e "\t\t{" >> $destpath/$appname.code-workspace
             echo -e "\t\t\t\"path\" : \"$addonworkspace\"" >> $destpath/$appname.code-workspace
