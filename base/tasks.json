@@ -9,7 +9,7 @@
             "label": "OPENFRAMEWORKS BUILD RELEASE",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             },
             "command": "make -j4 -s 2>&1 && make RunRelease",
             "group": {
@@ -34,7 +34,7 @@
             "label": "build Release",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             },
             "command": "make",
             "args": [
@@ -46,7 +46,7 @@
             "label": "clean Debug",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             },
             "command": "make",
             "args": [
@@ -58,7 +58,7 @@
             "label": "clean Release",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             },
             "command": "make",
             "args": [
@@ -70,7 +70,7 @@
             "label": "clean All",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             },
             "command": "make",
             "args": [

@@ -68,6 +68,7 @@ if [ -f $inputlist ]; then
                             prefix=""
                         fi
 
+
                         echo -e "        presuming path $searchpath"
                         if [ -d $searchpath/src ]; then
                                 echo -e "        adding all the paths in $searchpath/src"
@@ -88,6 +89,31 @@ fi
 
 cat $scriptpath/base/c_cpp_properties_pt2.json >> $destpath/.vscode/c_cpp_properties.json
 
+
+
+cat $scriptpath/base/code-workspace.pt1 >> $destpath/$appname.code-workspace
+
+if [ -f $inputlist ]; then
+        while read -r addon
+        do
+
+            echo -e "    adding $addon to workspace"
+
+            addonworkspace="$wsroot../../../../addons/$addon"
+
+            echo "search path is $addonworkspace"
+
+            echo -e "\t\t{" >> $destpath/$appname.code-workspace
+            echo -e "\t\t\t\"path\" : \"$addonworkspace\"" >> $destpath/$appname.code-workspace
+            echo -e "\t\t}," >> $destpath/$appname.code-workspace
+
+        done < $inputlist
+fi
+
+
+cat $scriptpath/base/code-workspace.pt2 >> $destpath/$appname.code-workspace
+
+
 sed -i -e "s|OFDIRECTORY|$rootpath|g" $destpath/.vscode/c_cpp_properties.json
 sed -i -e "s|COMPILERMODE|$compiler|g" $destpath/.vscode/c_cpp_properties.json
 
@@ -101,8 +127,7 @@ sed -i -e "s|COMPILERMODE|$compiler|g" $destpath/.vscode/settings.json
 
 cp  $scriptpath/base/tasks.json $destpath/.vscode/tasks.json
 
-echo "copying other files"
-cp $scriptpath/base/appname.code-workspace $destpath/$appname.code-workspace
+echo "copying oF makefile files"
 
 if [ ! -f $destpath/Makefile ]; then
         cp $scriptpath/base/Makefile $destpath/Makefile
