@@ -97,14 +97,15 @@ cat $scriptpath/base/code-workspace.pt1 >> $destpath/$appname.code-workspace
 if [ -f $inputlist ]; then
         while read -r addon
         do
-            addonworkspace="$wsroot../../../../addons/$addon"
+            if [ -n "$addon" ]; then
+                addonworkspace="$wsroot../../../../addons/$addon"
 
-            echo -e "    adding $addon to workspace"
+                echo -e "    adding $addon to workspace"
 
-            echo -e "\t\t{" >> $destpath/$appname.code-workspace
-            echo -e "\t\t\t\"path\" : \"$addonworkspace\"" >> $destpath/$appname.code-workspace
-            echo -e "\t\t}," >> $destpath/$appname.code-workspace
-
+                echo -e "\t\t{" >> $destpath/$appname.code-workspace
+                echo -e "\t\t\t\"path\" : \"$addonworkspace\"" >> $destpath/$appname.code-workspace
+                echo -e "\t\t}," >> $destpath/$appname.code-workspace
+            fi
         done < $inputlist
 fi
 
