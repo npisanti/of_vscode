@@ -49,6 +49,7 @@ wsroot='${workspaceRoot}/'
 if [ -f $inputlist ]; then
         while read -r addon
         do
+            if [ -n "$addon" ]; then
                 filename=$scriptpath/paths/$addon.paths
                 if [ -f $filename ]; then
                         echo -e "    adding includes for $addon"
@@ -84,6 +85,7 @@ if [ -f $inputlist ]; then
                         fi
 
                 fi
+            fi
         done < $inputlist
 fi
 
