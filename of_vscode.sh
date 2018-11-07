@@ -134,5 +134,7 @@ if [ ! -f $destpath/Makefile ]; then
         cp $scriptpath/base/Makefile $destpath/Makefile
 fi
 
+echo "running gnu global to generate tags"
+gtags
 
 exit
