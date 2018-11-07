@@ -135,6 +135,7 @@ if [ ! -f $destpath/Makefile ]; then
 fi
 
 echo "running gnu global to generate tags"
+cd $destpath
 gtags
 
 exit
