@@ -39,7 +39,7 @@
             "command": "scan-build make Debug  -j4 -s 2>&1 || exit 1",
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
             "problemMatcher": {
                 "owner": "cpp",
