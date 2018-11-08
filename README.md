@@ -5,11 +5,15 @@ bash script for generating VSCode openFrameworks project with enabled intellisen
 - openFrameworks 0.10.0 gcc6
 - Microsoft Visual Studio Code IDE 1.27.2
 
+additional requirements are GNU Global and clang, the first for generating the tags, and the second for some static analysis on debugging:
+```
+    sudo apt-get install global clang
+```
+
 # install visual studio code
 For working with oF and VSCode:
 - you have to install the [.deb package](https://code.visualstudio.com/docs/?dv=linux64_deb) for VSCode, download it and then run `sudo dpkg -i code_*`.
 - in the editor you have to install some extensions. You can do it in the extension section of the sidebar, press `Ctrl+Shift+X` to open it, then search `C/C++` by Microsoft and `C++ Intellisense` by [austin](https://github.com/austin-----/code-gnu-global), and install them.
-- to make `C++ Intellisense` work you have to install gnu global : `sudo apt-get install global`
 
 In the preference I recommend enabling `Files: Insert Final Newline' (as all the text/code files in linux should be terminated by a newline) and disabling Telemetry options to avoid sending data to Microsoft ( thanks for the software but still i would prefer not to ).
 

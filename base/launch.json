@@ -5,7 +5,7 @@
             "name": "(lldb) Attach",
             "type": "cppdbg",
             "request": "attach",
-            "program": "${workspaceRoot}/bin/APPNAME",
+            "program": "${workspaceRoot}/bin/APPNAME_debug",
             "processId": "${command:pickProcess}",
             "MIMode": "lldb"
         },
@@ -13,7 +13,7 @@
             "name": "C++ Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/bin/APPNAME",
+            "program": "${workspaceRoot}/bin/APPNAME_debug",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
@@ -28,7 +28,8 @@
                         "ignoreFailures": true
                     }
                 ],
-                "program": "${workspaceRoot}/bin/shelfix"
+                "program": "${workspaceRoot}/bin/APPNAME_debug",
+                "preLaunchTask": "OPENFRAMEWORKS BUILD DEBUG"
             },
             "osx": {
                 "MIMode": "lldb"
@@ -48,7 +49,7 @@
             "name": "C++ Attach",
             "type": "cppdbg",
             "request": "attach",
-            "program": "${workspaceRoot}/bin/APPNAME",
+            "program": "${workspaceRoot}/bin/APPNAME_debug",
             "processId": "${command:pickProcess}",
             "linux": {
                 "MIMode": "gdb",
