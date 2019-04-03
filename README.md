@@ -50,9 +50,9 @@ If an addon include headers outside its folder probably is a better idea to writ
 # custom install
 Optionally you can install it with:
 ```
-sh install.sh /absolute/path/to/oF/directory compilername
+sh install.sh /absolute/path/to/oF/directory
 ```
-If you don't give the absolute path to your oF directory, it defaults to a relative path three folder above the app folder. You cannot specify `compilername` without giving the oF path first, if you don't give anything it uses the default compiler you set in the VSCode preference (search `Intellisense`). Another choice could be `clang-x64` if you use it.
+If you don't give the absolute path to your oF directory, it defaults to a relative path three folder above the app folder.
 
 # credits
 This project was ispired by [Roberto Fazio VS Code / oF example](https://github.com/robertofazio/openFrameworks_VisualStudioCode_Example), that motivated me to try to switch from Geany to VS Code.

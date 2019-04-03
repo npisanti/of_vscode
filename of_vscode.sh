@@ -11,9 +11,8 @@ rootpath='CONFIGOFDIRECTORY'
 # choose the name of your distro includes for oF
 distrofile="of_debian.paths"
 
-#choose your compiler
-compiler='CONFIGCOMPILER'
-#compiler="clang-x64"
+# must default to this for intellisense
+compiler="clang-x64"
 
 
 # ---------------- SCRIPT -------------------------------------
@@ -116,7 +115,6 @@ cat $scriptpath/base/code-workspace.pt2 >> $destpath/$appname.code-workspace
 
 
 sed -i -e "s|OFDIRECTORY|$rootpath|g" $destpath/.vscode/c_cpp_properties.json
-sed -i -e "s|COMPILERMODE|$compiler|g" $destpath/.vscode/c_cpp_properties.json
 
 echo "editing other json files"
 
@@ -124,7 +122,6 @@ cp  $scriptpath/base/launch.json $destpath/.vscode/launch.json
 sed -i -e "s|APPNAME|$appname|g" $destpath/.vscode/launch.json
 
 cp  $scriptpath/base/settings.json $destpath/.vscode/settings.json
-sed -i -e "s|COMPILERMODE|$compiler|g" $destpath/.vscode/settings.json
 
 cp  $scriptpath/base/tasks.json $destpath/.vscode/tasks.json
 

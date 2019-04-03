@@ -1,4 +1,4 @@
 {
-    "C_Cpp.default.intelliSenseMode": "COMPILERMODE",
+    "C_Cpp.default.intelliSenseMode": "clang-x64",
     "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }
