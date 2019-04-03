@@ -18,16 +18,6 @@ fi
 
 sed -i -e "s|CONFIGOFDIRECTORY|$ofpath|g" toedit.sh
 
-compiler=$2
-if [ -z "$compiler" ]; then
-    echo "compiler set to vs code default"
-    # escape sequence $ two times!
-    sed -i -e 's|CONFIGCOMPILER|${default}|g' toedit.sh
-else
-    echo "compiler set to $compiler"
-    sed -i -e "s|CONFIGCOMPILER|$compiler|g" toedit.sh
-fi
-
 chmod +x toedit.sh
 
 echo "sudo password required for moving generated script to /usr/local/bin"
